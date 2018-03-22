@@ -1,0 +1,13 @@
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\bin\Debug\netcoreapp2.0\FootballClubApp.deps.json
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\bin\Debug\netcoreapp2.0\FootballClubApp.runtimeconfig.json
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\bin\Debug\netcoreapp2.0\FootballClubApp.runtimeconfig.dev.json
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\bin\Debug\netcoreapp2.0\FootballClubApp.dll
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\obj\Debug\netcoreapp2.0\FootballClubApp.csprojResolveAssemblyReference.cache
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\obj\Debug\netcoreapp2.0\FootballClubApp.csproj.CoreCompileInputs.cache
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\obj\Debug\netcoreapp2.0\FootballClubApp.AssemblyInfoInputs.cache
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\obj\Debug\netcoreapp2.0\FootballClubApp.AssemblyInfo.cs
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\bin\Debug\netcoreapp2.0\FootballClubApp.pdb
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\bin\Debug\netcoreapp2.0\FootballClub.DAL.dll
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\bin\Debug\netcoreapp2.0\FootballClub.DAL.pdb
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\obj\Debug\netcoreapp2.0\FootballClubApp.dll
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\obj\Debug\netcoreapp2.0\FootballClubApp.pdb
