@@ -1,0 +1,8 @@
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.ViewModels\bin\Debug\netcoreapp2.0\FootballClubApp.ViewModels.deps.json
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.ViewModels\bin\Debug\netcoreapp2.0\FootballClubApp.ViewModels.dll
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.ViewModels\bin\Debug\netcoreapp2.0\FootballClubApp.ViewModels.pdb
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.ViewModels\obj\Debug\netcoreapp2.0\FootballClubApp.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.ViewModels\obj\Debug\netcoreapp2.0\FootballClubApp.ViewModels.AssemblyInfoInputs.cache
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.ViewModels\obj\Debug\netcoreapp2.0\FootballClubApp.ViewModels.AssemblyInfo.cs
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.ViewModels\obj\Debug\netcoreapp2.0\FootballClubApp.ViewModels.dll
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.ViewModels\obj\Debug\netcoreapp2.0\FootballClubApp.ViewModels.pdb

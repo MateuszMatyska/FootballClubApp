@@ -1,9 +1,0 @@
-C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClub.DAL\bin\Debug\netcoreapp2.0\FootballClub.DAL.deps.json
-C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClub.DAL\bin\Debug\netcoreapp2.0\FootballClub.DAL.dll
-C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClub.DAL\obj\Debug\netcoreapp2.0\FootballClub.DAL.csprojResolveAssemblyReference.cache
-C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClub.DAL\obj\Debug\netcoreapp2.0\FootballClub.DAL.csproj.CoreCompileInputs.cache
-C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClub.DAL\obj\Debug\netcoreapp2.0\FootballClub.DAL.AssemblyInfoInputs.cache
-C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClub.DAL\obj\Debug\netcoreapp2.0\FootballClub.DAL.AssemblyInfo.cs
-C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClub.DAL\bin\Debug\netcoreapp2.0\FootballClub.DAL.pdb
-C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClub.DAL\obj\Debug\netcoreapp2.0\FootballClub.DAL.dll
-C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClub.DAL\obj\Debug\netcoreapp2.0\FootballClub.DAL.pdb
