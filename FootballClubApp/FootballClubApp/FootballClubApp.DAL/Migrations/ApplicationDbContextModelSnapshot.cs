@@ -21,7 +21,121 @@ namespace FootballClubApp.DAL.Migrations
                 .HasAnnotation("ProductVersion", "2.0.2-rtm-10011")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ExampleTemplate.BLL.Entities.Role", b =>
+            modelBuilder.Entity("FootballClubApp.BLL.Entities.BasicInformations", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Data");
+
+                    b.Property<string>("Information");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BasicInformations");
+                });
+
+            modelBuilder.Entity("FootballClubApp.BLL.Entities.Coaches", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("SeasonId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SeasonId");
+
+                    b.ToTable("Coaches");
+                });
+
+            modelBuilder.Entity("FootballClubApp.BLL.Entities.CountryLeague", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ClubName");
+
+                    b.Property<int>("Draws");
+
+                    b.Property<int>("Loses");
+
+                    b.Property<int>("MatchesAmount");
+
+                    b.Property<int>("Place");
+
+                    b.Property<int>("Points");
+
+                    b.Property<int>("SeasonId");
+
+                    b.Property<int>("Wins");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SeasonId");
+
+                    b.ToTable("CountryLeague");
+                });
+
+            modelBuilder.Entity("FootballClubApp.BLL.Entities.EuropeEliminations", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("AwayResult");
+
+                    b.Property<string>("HomeResult");
+
+                    b.Property<string>("NameOfCompetition");
+
+                    b.Property<string>("NameOfStage");
+
+                    b.Property<int>("Round");
+
+                    b.Property<int>("SeasonId");
+
+                    b.Property<string>("Team");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SeasonId");
+
+                    b.ToTable("EuropeEliminations");
+                });
+
+            modelBuilder.Entity("FootballClubApp.BLL.Entities.EuropeLeague", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ClubName");
+
+                    b.Property<int>("Draws");
+
+                    b.Property<int>("Loses");
+
+                    b.Property<int>("MatchesAmount");
+
+                    b.Property<string>("NameOfCompetition");
+
+                    b.Property<int>("Place");
+
+                    b.Property<int>("Points");
+
+                    b.Property<int>("SeasonId");
+
+                    b.Property<int>("Wins");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SeasonId");
+
+                    b.ToTable("EuropeLeague");
+                });
+
+            modelBuilder.Entity("FootballClubApp.BLL.Entities.Role", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -45,7 +159,19 @@ namespace FootballClubApp.DAL.Migrations
                     b.ToTable("AspNetRoles");
                 });
 
-            modelBuilder.Entity("ExampleTemplate.BLL.Entities.User", b =>
+            modelBuilder.Entity("FootballClubApp.BLL.Entities.Seasons", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Season");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Seasons");
+                });
+
+            modelBuilder.Entity("FootballClubApp.BLL.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -177,9 +303,41 @@ namespace FootballClubApp.DAL.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("FootballClubApp.BLL.Entities.Coaches", b =>
+                {
+                    b.HasOne("FootballClubApp.BLL.Entities.Seasons", "Season")
+                        .WithMany("Coaches")
+                        .HasForeignKey("SeasonId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("FootballClubApp.BLL.Entities.CountryLeague", b =>
+                {
+                    b.HasOne("FootballClubApp.BLL.Entities.Seasons", "Season")
+                        .WithMany("League")
+                        .HasForeignKey("SeasonId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("FootballClubApp.BLL.Entities.EuropeEliminations", b =>
+                {
+                    b.HasOne("FootballClubApp.BLL.Entities.Seasons", "Season")
+                        .WithMany("GetEuropeEliminations")
+                        .HasForeignKey("SeasonId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("FootballClubApp.BLL.Entities.EuropeLeague", b =>
+                {
+                    b.HasOne("FootballClubApp.BLL.Entities.Seasons", "Season")
+                        .WithMany("EuropeLeague")
+                        .HasForeignKey("SeasonId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
-                    b.HasOne("ExampleTemplate.BLL.Entities.Role")
+                    b.HasOne("FootballClubApp.BLL.Entities.Role")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -187,7 +345,7 @@ namespace FootballClubApp.DAL.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
-                    b.HasOne("ExampleTemplate.BLL.Entities.User")
+                    b.HasOne("FootballClubApp.BLL.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -195,7 +353,7 @@ namespace FootballClubApp.DAL.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
-                    b.HasOne("ExampleTemplate.BLL.Entities.User")
+                    b.HasOne("FootballClubApp.BLL.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -203,12 +361,12 @@ namespace FootballClubApp.DAL.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
                 {
-                    b.HasOne("ExampleTemplate.BLL.Entities.Role")
+                    b.HasOne("FootballClubApp.BLL.Entities.Role")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ExampleTemplate.BLL.Entities.User")
+                    b.HasOne("FootballClubApp.BLL.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -216,7 +374,7 @@ namespace FootballClubApp.DAL.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
                 {
-                    b.HasOne("ExampleTemplate.BLL.Entities.User")
+                    b.HasOne("FootballClubApp.BLL.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

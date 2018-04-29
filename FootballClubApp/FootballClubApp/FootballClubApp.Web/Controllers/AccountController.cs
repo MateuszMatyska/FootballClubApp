@@ -21,17 +21,20 @@ namespace FootballClubApp.Web.Controllers
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IEmailSender _emailSender;
+        private readonly RoleManager<Role> _roleManager;
 
         public AccountController(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
             IEmailSender emailSender,
             IUnitOfWork uow, 
-            ILoggerFactory loggerFactory):base(uow, loggerFactory)
+            ILoggerFactory loggerFactory,
+            RoleManager<Role> roleManager):base(uow, loggerFactory)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
+            _roleManager = roleManager;
         }
 
         [TempData]
@@ -75,6 +78,10 @@ namespace FootballClubApp.Web.Controllers
                 }
                 else
                 {
+                    if (!await _roleManager.RoleExistsAsync("Admin"))
+                    {
+                        ModelState.AddModelError(string.Empty, "No Admin");
+                    }
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                     return View(model);
                 }
@@ -219,6 +226,7 @@ namespace FootballClubApp.Web.Controllers
             {
                 var user = new User { UserName = model.Email, Email = model.Email };
                 var result = await _userManager.CreateAsync(user, model.Password);
+               
                 if (result.Succeeded)
                 {
                     Logger.LogInformation("User created a new account with password.");
@@ -229,6 +237,7 @@ namespace FootballClubApp.Web.Controllers
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     Logger.LogInformation("User created a new account with password.");
+                   // await _userManager.AddToRoleAsync(user, "Admin");
                     return RedirectToLocal(returnUrl);
                 }
                 AddErrors(result);

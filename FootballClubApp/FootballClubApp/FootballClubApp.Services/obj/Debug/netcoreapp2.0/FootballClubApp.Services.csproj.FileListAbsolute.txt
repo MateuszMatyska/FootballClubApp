@@ -13,5 +13,6 @@ C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\Football
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Services\obj\Debug\netcoreapp2.0\FootballClubApp.Services.csproj.CoreCompileInputs.cache
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Services\obj\Debug\netcoreapp2.0\FootballClubApp.Services.AssemblyInfoInputs.cache
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Services\obj\Debug\netcoreapp2.0\FootballClubApp.Services.AssemblyInfo.cs
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Services\obj\Debug\netcoreapp2.0\FootballClubApp.Services.csproj.CopyComplete
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Services\obj\Debug\netcoreapp2.0\FootballClubApp.Services.dll
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Services\obj\Debug\netcoreapp2.0\FootballClubApp.Services.pdb

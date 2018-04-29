@@ -4172,13 +4172,11 @@
   },
   "packageFolders": {
     "C:\\Users\\MateuszM\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
       "projectUniqueName": "C:\\Users\\MateuszM\\Documents\\Visual Studio 2017\\Projects\\FootballClubApp\\FootballClubApp\\FootballClubApp\\FootballClubApp.Utilities\\FootballClubApp.Utilities.csproj",
       "projectName": "FootballClubApp.Utilities",
@@ -4187,11 +4185,13 @@
       "outputPath": "C:\\Users\\MateuszM\\Documents\\Visual Studio 2017\\Projects\\FootballClubApp\\FootballClubApp\\FootballClubApp\\FootballClubApp.Utilities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\MateuszM\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -4216,12 +4216,12 @@
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Core": {
             "target": "Package",
-            "version": "2.0.3"
+            "version": "[2.0.3, )"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           }
         },

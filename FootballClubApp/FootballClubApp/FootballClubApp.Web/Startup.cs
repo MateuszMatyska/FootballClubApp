@@ -137,6 +137,9 @@ namespace FootballClubApp.Web
             services.AddScoped<IRepository<User>, EntityFrameworkRepository<User>>();
             services.AddScoped<IRepository<Role>, EntityFrameworkRepository<Role>>();
             services.AddScoped<IRepository<IdentityUserRole<int>>, EntityFrameworkRepository<IdentityUserRole<int>>>();
+            services.AddScoped<ISeasonsService, SeasonsService>();
+            services.AddScoped<IBasicInformationService, BasicInformationService>();
+
             #endregion
             Services = services;
         }

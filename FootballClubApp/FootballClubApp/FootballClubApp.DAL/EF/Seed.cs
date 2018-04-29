@@ -9,6 +9,7 @@ namespace FootballClubApp.DAL.EF
         public static void RunSeed(DbContext context, RoleManager<Role> roleManager, UserManager<User> userManager)
         {
             // Seed operations
+            
         }
 
     }

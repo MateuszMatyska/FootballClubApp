@@ -7,5 +7,6 @@ C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\Football
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.DAL\obj\Debug\netcoreapp2.0\FootballClubApp.DAL.csproj.CoreCompileInputs.cache
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.DAL\obj\Debug\netcoreapp2.0\FootballClubApp.DAL.AssemblyInfoInputs.cache
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.DAL\obj\Debug\netcoreapp2.0\FootballClubApp.DAL.AssemblyInfo.cs
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.DAL\obj\Debug\netcoreapp2.0\FootballClubApp.DAL.csproj.CopyComplete
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.DAL\obj\Debug\netcoreapp2.0\FootballClubApp.DAL.dll
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.DAL\obj\Debug\netcoreapp2.0\FootballClubApp.DAL.pdb

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using FootballClubApp.BLL.Entities;
 
 namespace FootballClubApp.DAL.EF
 {
@@ -14,6 +15,12 @@ namespace FootballClubApp.DAL.EF
 
         // Table properties e.g
         // public virtual DbSet<Entity> TableName { get; set; }
+        public virtual DbSet<BasicInformations> BasicInformations { get; set; }
+        public virtual DbSet<Seasons> Seasons { get; set; }
+        public virtual DbSet<Coaches> Coaches { get; set; }
+        public virtual DbSet<EuropeEliminations> EuropeEliminations { get; set; }
+        public virtual DbSet<EuropeLeague> EuropeLeague { get; set; }
+        public virtual DbSet<CountryLeague> CountryLeague { get; set; }
 
 
         public ApplicationDbContext(ConnectionStringDto connectionStringDto)
@@ -33,4 +40,5 @@ namespace FootballClubApp.DAL.EF
             // Fluent API commands
         }
     }
+
 }

@@ -13780,13 +13780,11 @@
   },
   "packageFolders": {
     "C:\\Users\\MateuszM\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
       "projectUniqueName": "C:\\Users\\MateuszM\\Documents\\Visual Studio 2017\\Projects\\FootballClubApp\\FootballClubApp\\FootballClubApp\\FootballClubApp.Web\\FootballClubApp.Web.csproj",
       "projectName": "FootballClubApp.Web",
@@ -13795,11 +13793,13 @@
       "outputPath": "C:\\Users\\MateuszM\\Documents\\Visual Studio 2017\\Projects\\FootballClubApp\\FootballClubApp\\FootballClubApp\\FootballClubApp.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\MateuszM\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -13811,11 +13811,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\MateuszM\\Documents\\Visual Studio 2017\\Projects\\FootballClubApp\\FootballClubApp\\FootballClubApp\\FootballClubApp.Services\\FootballClubApp.Services.csproj": {
-              "projectPath": "C:\\Users\\MateuszM\\Documents\\Visual Studio 2017\\Projects\\FootballClubApp\\FootballClubApp\\FootballClubApp\\FootballClubApp.Services\\FootballClubApp.Services.csproj"
-            },
             "C:\\Users\\MateuszM\\Documents\\Visual Studio 2017\\Projects\\FootballClubApp\\FootballClubApp\\FootballClubApp\\FootballClubApp.BLL\\FootballClubApp.BLL.csproj": {
               "projectPath": "C:\\Users\\MateuszM\\Documents\\Visual Studio 2017\\Projects\\FootballClubApp\\FootballClubApp\\FootballClubApp\\FootballClubApp.BLL\\FootballClubApp.BLL.csproj"
+            },
+            "C:\\Users\\MateuszM\\Documents\\Visual Studio 2017\\Projects\\FootballClubApp\\FootballClubApp\\FootballClubApp\\FootballClubApp.Services\\FootballClubApp.Services.csproj": {
+              "projectPath": "C:\\Users\\MateuszM\\Documents\\Visual Studio 2017\\Projects\\FootballClubApp\\FootballClubApp\\FootballClubApp\\FootballClubApp.Services\\FootballClubApp.Services.csproj"
             },
             "C:\\Users\\MateuszM\\Documents\\Visual Studio 2017\\Projects\\FootballClubApp\\FootballClubApp\\FootballClubApp\\FootballClubApp.Utilities\\FootballClubApp.Utilities.csproj": {
               "projectPath": "C:\\Users\\MateuszM\\Documents\\Visual Studio 2017\\Projects\\FootballClubApp\\FootballClubApp\\FootballClubApp\\FootballClubApp.Utilities\\FootballClubApp.Utilities.csproj"
@@ -13835,36 +13835,36 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[6.2.2, )"
+          },
+          "DataAccessLayer.Core.EntityFramework": {
+            "target": "Package",
+            "version": "[1.0.9, )"
+          },
+          "Microsoft.AspNetCore.All": {
+            "target": "Package",
+            "version": "[2.0.6, )"
+          },
           "Microsoft.EntityFrameworkCore.Tools": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.2"
+            "version": "[2.0.2, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.3"
-          },
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "2.0.0",
-            "autoReferenced": true
-          },
-          "DataAccessLayer.Core.EntityFramework": {
-            "target": "Package",
-            "version": "1.0.9"
-          },
-          "AutoMapper": {
-            "target": "Package",
-            "version": "6.2.2"
-          },
-          "Microsoft.AspNetCore.All": {
-            "target": "Package",
-            "version": "2.0.6"
+            "version": "[2.0.3, )"
           },
           "Serilog.Extensions.Logging.File": {
             "target": "Package",
-            "version": "1.1.0"
+            "version": "[1.1.0, )"
           }
         },
         "imports": [
