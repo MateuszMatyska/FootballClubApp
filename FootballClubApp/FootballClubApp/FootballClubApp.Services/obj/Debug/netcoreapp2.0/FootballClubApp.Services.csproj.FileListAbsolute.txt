@@ -9,7 +9,7 @@ C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\Football
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Services\bin\Debug\netcoreapp2.0\FootballClubApp.DAL.pdb
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Services\bin\Debug\netcoreapp2.0\FootballClubApp.Utilities.pdb
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Services\bin\Debug\netcoreapp2.0\FootballClubApp.ViewModels.pdb
-C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Services\obj\Debug\netcoreapp2.0\FootballClubApp.Services.csprojResolveAssemblyReference.cache
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Services\obj\Debug\netcoreapp2.0\FootballClubApp.Services.csprojAssemblyReference.cache
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Services\obj\Debug\netcoreapp2.0\FootballClubApp.Services.csproj.CoreCompileInputs.cache
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Services\obj\Debug\netcoreapp2.0\FootballClubApp.Services.AssemblyInfoInputs.cache
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Services\obj\Debug\netcoreapp2.0\FootballClubApp.Services.AssemblyInfo.cs

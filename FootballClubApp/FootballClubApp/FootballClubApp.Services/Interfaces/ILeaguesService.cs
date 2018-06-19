@@ -12,6 +12,6 @@ namespace FootballClubApp.Services.Interfaces
         bool EditEuropeLeagueRecord(int seasonId, int recordId, EuropeLeague record);
         bool DeleteLeagueRecord<T>(int seasonId, int recordId) where T : League;
         T GetLeagueRecord<T>(int seasonId, int recordId) where T : League;
-        IEnumerable<T> GetLeagueRecords<T>(int seasonId) where T : League;
+        List<T> GetLeagueRecords<T>(int seasonId) where T : League;
     }
 }

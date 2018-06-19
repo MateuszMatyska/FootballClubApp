@@ -109,11 +109,11 @@ namespace FootballClubApp.Services.Services
             }
         }
 
-        public IEnumerable<T> GetLeagueRecords<T>(int seasonId) where T : League
+        public List<T> GetLeagueRecords<T>(int seasonId) where T : League
         {
             try
             {
-                return _ctx.Set<T>();
+                return _ctx.Set<T>().Where(x => x.SeasonId == seasonId).ToList();
             }
             catch(Exception)
             {
