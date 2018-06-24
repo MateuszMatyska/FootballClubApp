@@ -1,0 +1,68 @@
+﻿@using FootballClubApp.ViewModels
+@model IEnumerable<SeasonsViewModel>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+@{
+    ViewData["Title"] = "EuropeElimination";
+}
+
+<div class="row no-gutters">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <select id="season" class="form-control">
+            <option value="">----</option>
+            @foreach (var itm in Model)
+            {
+                <option value="@itm.Id">@itm.Season</option>
+            }
+        </select>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+
+    </div>
+</div>
+<script>
+    //function addTable(result) {
+    //    var data = JSON.parse(result);
+    //    if (data.length == 0) {
+    //        $('#leagueName h2').remove();
+    //        $('#leagueName').append('<h2> W tym sezonie drużyna nie uczestniczyła w rozgrywkach Europejskich </h2>');
+    //    }
+    //    else {
+    //        $('#leagueName h2').remove();
+    //        $('#leagueName').append('<h2>' + data[0].NameOfCompetition + '</h2>');
+    //        $('#tabela tbody tr').remove();
+    //        for (var i = 0; i < data.length; i++) {
+    //            $('#tabela tbody:last-child').append('<tr><td>' + data[i].Place + '</td><td>' + data[i].ClubName + '</td><td>' + data[i].MatchesAmount + '</td><td>' + data[i].Wins + '</td><td>' + data[i].Draws + '</td><td>' + data[i].Loses + '</td><td>' + data[i].Points + '</td></tr>')
+    //        }
+    //    }
+    //}
+
+    function drawResult(result) {
+        var data = JSON.parse(result);
+        for (var i = 0; i < data.length; i++) {
+            addElimination(data[i]);
+        }
+    }
+
+    function addElimination(res){
+        
+    }
+
+    $(document).ready(function () {
+        $("#season").on('change', function () {
+            var yearId = $("#season").val();
+
+            $.ajax({
+                url: '/Leagues/GetElimination',
+                type: 'GET',
+                dataType: 'Json',
+                data: { seasonId: yearId },
+                success: function (result) {
+                    drawResult(result);
+                },
+                error: function () {
+                    alert("Sorry, can't load data");
+                }
+            });
+        })
+    });
+</script>

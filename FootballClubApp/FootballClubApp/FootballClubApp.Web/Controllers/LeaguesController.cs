@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using FootballClubApp.BLL.Entities;
 using FootballClubApp.Services.Interfaces;
-using FootballClubApp.Services.Services;
 using FootballClubApp.ViewModels;
 using FootballClubApp.ViewModels.LeaguesViewModels.Base;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace FootballClubApp.Web.Controllers
 {
@@ -42,6 +38,14 @@ namespace FootballClubApp.Web.Controllers
             return View(model);
         }
 
+        public IActionResult EuropeElimination()
+        {
+            var seasons = _seasons.GetSeasons();
+            var model = _mapper.Map<List<Seasons>, List<SeasonsViewModel>>(seasons);
+
+            return View(model);
+        }
+
         public IActionResult GetCountryLeaguesResults(int seasonId)
         {
             var countryLeagueResult = _leagueServices.GetLeagueRecords<CountryLeague>(seasonId);
@@ -56,6 +60,14 @@ namespace FootballClubApp.Web.Controllers
             var results = JsonConvert.SerializeObject(_mapper.Map<List<EuropeLeague>, List<EuropeLeaguesBaseModel>>(europeLeagueResult));
 
             return Json(results);
+        }
+
+        public IActionResult GetElimination(int seasonId)
+        {
+            var elimination = _leagueServices.GetEliminations(seasonId);
+            var result = JsonConvert.SerializeObject(elimination);
+
+            return Json(result);
         }
     }
 }

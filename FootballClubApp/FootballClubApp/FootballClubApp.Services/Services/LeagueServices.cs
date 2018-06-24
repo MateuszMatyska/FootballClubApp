@@ -120,5 +120,71 @@ namespace FootballClubApp.Services.Services
                 throw;
             }
         }
+
+        public List<EuropeEliminations> GetEliminations(int seasonId)
+        {
+            try
+            {
+                return _ctx.EuropeEliminations.Where(x => x.SeasonId == seasonId).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public bool AddEliminations(int seasonId, EuropeEliminations elimination)
+        {
+            try
+            {
+                elimination.SeasonId = seasonId;
+                _ctx.EuropeEliminations.Add(elimination);
+                _ctx.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool EditEliminations(int seasonId, int eliminationId, EuropeEliminations elimination)
+        {
+            try
+            {
+                var oldItem = _ctx.EuropeEliminations.First(x => x.SeasonId == seasonId && x.Id == eliminationId);
+
+                oldItem.AwayResult = elimination.AwayResult;
+                oldItem.HomeResult = elimination.HomeResult;
+                oldItem.NameOfCompetition = elimination.NameOfCompetition;
+                oldItem.NameOfStage = elimination.NameOfStage;
+                oldItem.Round = elimination.Round;
+                oldItem.SeasonId = elimination.SeasonId;
+                oldItem.Team = elimination.Team;
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteEliminations(int seasonId, int eliminationId)
+        {
+            try
+            {
+                var item = _ctx.EuropeEliminations.First(x => x.SeasonId == seasonId && x.Id == eliminationId);
+                _ctx.EuropeEliminations.Remove(item);
+                _ctx.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
