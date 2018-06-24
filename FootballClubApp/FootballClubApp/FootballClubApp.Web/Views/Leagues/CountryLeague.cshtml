@@ -1,0 +1,59 @@
+﻿@using FootballClubApp.ViewModels
+@model IEnumerable<SeasonsViewModel>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+@{
+    ViewData["Title"] = "CountryLeague";
+}
+<div class="row no-gutters">
+    <select id="season">
+        <option value="">----</option>
+        @foreach (var itm in Model)
+        {
+            <option value="@itm.Id">@itm.Season</option>
+        }
+    </select>
+    <div id="tabela">
+        <table id="leagueTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>L.</th>
+                    <th>Klub</th>
+                    <th>Rozegrane Mecze</th>
+                    <th>Wygrane</th>
+                    <th>Remisy</th>
+                    <th>Porażki</th>
+                    <th>Punkty</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+<script>
+    function addTable(result) {
+        var data = JSON.parse(result);
+        $('#tabela tbody tr').remove();
+        for (var i = 0; i < data.length; i++) {
+            $('#tabela tbody:last-child').append('<tr><td>' + data[i].Place + '</td><td>' + data[i].ClubName + '</td><td>' + data[i].MatchesAmount + '</td><td>' + data[i].Wins + '</td><td>' + data[i].Draws + '</td><td>' + data[i].Loses + '</td><td>' + data[i].Points + '</td></tr>')
+        }
+    }
+
+    $(document).ready(function () {
+        $("#season").on('change', function () {
+            var yearId = $("#season").val();
+
+            $.ajax({
+                url: '/Leagues/GetCountryLeaguesResults',
+                type: 'GET',
+                dataType: 'Json',
+                data: { seasonId: yearId },
+                success: function (result) {
+                    addTable(result);
+                },
+                error: function () {
+                    alert("Sorry, can't load data");
+                }
+            });
+        })
+    });
+</script>

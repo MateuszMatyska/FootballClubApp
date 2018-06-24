@@ -68,7 +68,16 @@
             </form>
         </div>
     </nav>
-
+    <div class="row no-gutters">
+        <div class="col-lg-2 col-md-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-12">
+            <div class="col-lg-3 col-md-3 col-sm-6">@Html.ActionLink("Rozgrywki Krajowe","CountryLeague","Leagues",(object)null,new { @class = "btn btn-primary btn-lg" })</div>
+            <div class="col-lg-3 col-md-3 col-sm-6">@Html.ActionLink("Rozgrywki Europejskie","EuropeLeague","Leagues",(object)null,new { @class = "btn btn-primary btn-lg" })</div>
+            <div class="col-lg-3 col-md-3 col-sm-6">@Html.ActionLink("Puchary Europejskie", "", "", (object)null, new { @class = "btn btn-primary btn-lg" })</div>
+            <div class="col-lg-3 col-md-3 col-sm-6">@Html.ActionLink("Admin Panel", "", "", (object)null, new { @class = "btn btn-primary btn-lg" })</div>
+        </div>
+        <div class="col-lg-2 col-md-2"></div>
+    </div>
     <div class="container body-content">
         @RenderBody()
         <hr />

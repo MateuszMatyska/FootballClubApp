@@ -26,7 +26,15 @@ namespace FootballClubApp.Web.Controllers
             _mapper = mapper;
         }
 
-        public IActionResult Index()
+        public IActionResult CountryLeague()
+        {
+            var seasons = _seasons.GetSeasons();
+            var model = _mapper.Map<List<Seasons>, List<SeasonsViewModel>>(seasons);
+
+            return View(model);
+        }
+
+        public IActionResult EuropeLeague()
         {
             var seasons = _seasons.GetSeasons();
             var model = _mapper.Map<List<Seasons>, List<SeasonsViewModel>>(seasons);
@@ -42,5 +50,12 @@ namespace FootballClubApp.Web.Controllers
             return Json(results);
         }
 
+        public IActionResult GetEuropeLeaguesResults(int seasonId)
+        {
+            var europeLeagueResult = _leagueServices.GetLeagueRecords<EuropeLeague>(seasonId);
+            var results = JsonConvert.SerializeObject(_mapper.Map<List<EuropeLeague>, List<EuropeLeaguesBaseModel>>(europeLeagueResult));
+
+            return Json(results);
+        }
     }
 }
