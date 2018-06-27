@@ -6,4 +6,3 @@ C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\Football
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.BLL\obj\Debug\netcoreapp2.0\FootballClubApp.BLL.AssemblyInfo.cs
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.BLL\obj\Debug\netcoreapp2.0\FootballClubApp.BLL.dll
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.BLL\obj\Debug\netcoreapp2.0\FootballClubApp.BLL.pdb
-C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.BLL\obj\Debug\netcoreapp2.0\FootballClubApp.BLL.csprojAssemblyReference.cache

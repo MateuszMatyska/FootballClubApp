@@ -21,6 +21,7 @@ namespace FootballClubApp.Services.Services
         {
             try
             {
+                record.SeasonId = seasonId;
                 _ctx.Set<T>().Add(record);
                 _ctx.SaveChanges();
 

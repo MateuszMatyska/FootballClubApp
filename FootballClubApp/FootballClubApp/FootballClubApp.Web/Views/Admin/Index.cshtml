@@ -1,0 +1,32 @@
+﻿@model IEnumerable<FootballClubApp.ViewModels.SeasonsViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row no-gutters">
+    <div class="col-lg-2 col-md-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h2>Liga Krajowa</h2>
+            @foreach(var c in Model)
+            {
+                <div class="col-lg-2 col-md-2 col-sm-6">@Html.ActionLink("Sezon"+c.Season, "GetCountryLeagues","Admin",new { seasonId = c.Id}, new { @class= "badge badge-pill badge-primary" })</div>
+            }
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h2>Liga Europejska</h2>
+            @foreach (var e in Model)
+            {
+                <div class="col-lg-2 col-md-2 col-sm-6">@Html.ActionLink("Sezon" + e.Season, "GetEuropeLeagues", "Admin", new { seasonId = e.Id }, new { @class = "badge badge-pill badge-primary" })</div>
+            }
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h2>Eliminacje i Play-Off</h2>
+            @foreach (var el in Model)
+            {
+                <div class="col-lg-2 col-md-2 col-sm-6">@Html.ActionLink("Sezon" + el.Season, "GetEuropeEliminations", "Admin", new { seasonId = el.Id }, new { @class = "badge badge-pill badge-primary" })</div>
+            }
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-2"></div>
+</div>
+

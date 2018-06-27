@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FootballClubApp.ViewModels.LeaguesViewModels.Base.CountryLeagueBaseModel>
+@{
+    ViewData["Title"] = "GetCountryLeagues";
+}
+
+<div class="row no-gutters">
+    <div class="col-lg-2 col-md-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-12">
+        <h2>Liga Krajowa</h2>
+        <table>
+            <tr>
+                <th>L.</th>
+                <th>Klub</th>
+                <th>Rozegrane Mecze</th>
+                <th>Wygrane</th>
+                <th>Remisy</th>
+                <th>Porażki</th>
+                <th>Punkty</th>
+                <th>Opcje</th>
+            </tr>
+            @foreach (var itm in Model)
+            {
+            <tr>
+                <td>@itm.Place</td>
+                <td>@itm.ClubName</td>
+                <td>@itm.MatchesAmount</td>
+                <td>@itm.Wins</td>
+                <td>@itm.Draws</td>
+                <td>@itm.Loses</td>
+                <td>@itm.Points</td>
+                <td>@Html.ActionLink("Edytuj", "EditCountryLeague", "Admin", new { seasonId = itm.SeasonId, id = itm.Id }, new { @class = "btn btn-warning btn-lg" })</td>
+                <td>@Html.ActionLink("Edytuj", "DeleteCountryLeague", "Admin", new { seasonId = itm.SeasonId, id = itm.Id }, new { @class = "btn btn-danger btn-lg" })</td>
+            </tr>
+            }
+        </table>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            @Html.ActionLink("Dodaj", "AddCountryLeague", "Admin", new { seasonId = Model.FirstOrDefault().SeasonId }, new { @class = "btn btn-primary btn-lg" })
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            @Html.ActionLink("Wróć", "Index", "Admin", (object)null, new { @class = "btn btn-primary btn-lg" })
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-2"></div>
+</div>
+
