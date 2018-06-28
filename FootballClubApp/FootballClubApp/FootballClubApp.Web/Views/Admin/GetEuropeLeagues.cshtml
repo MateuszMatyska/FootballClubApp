@@ -7,7 +7,7 @@
     <div class="col-lg-2 col-md-2"></div>
     <div class="col-lg-8 col-md-8 col-sm-12">
         <h2>Liga Krajowa</h2>
-        <table>
+        <table class="table table-striped">
             <tr>
                 <th>L.</th>
                 <th>Klub</th>
@@ -29,7 +29,7 @@
                 <td>@itm.Loses</td>
                 <td>@itm.Points</td>
                 <td>@Html.ActionLink("Edytuj", "EditEuropeLeague", "Admin", new { seasonId = itm.SeasonId, id = itm.Id }, new { @class = "btn btn-warning btn-lg" })</td>
-                <td>@Html.ActionLink("Edytuj", "DeleteEuropeLeague", "Admin", new { seasonId = itm.SeasonId, id = itm.Id }, new { @class = "btn btn-danger btn-lg" })</td>
+                <td>@Html.ActionLink("Usuń", "DeleteEuropeLeague", "Admin", new { seasonId = itm.SeasonId, id = itm.Id }, new { @class = "btn btn-danger btn-lg" })</td>
             </tr>
             }
         </table>

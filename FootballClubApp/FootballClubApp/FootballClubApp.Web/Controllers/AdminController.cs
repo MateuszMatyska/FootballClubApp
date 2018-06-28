@@ -7,6 +7,7 @@ using FootballClubApp.BLL.Entities;
 using FootballClubApp.Services.Interfaces;
 using FootballClubApp.ViewModels;
 using FootballClubApp.ViewModels.LeaguesViewModels.Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FootballClubApp.Web.Controllers
@@ -24,6 +25,7 @@ namespace FootballClubApp.Web.Controllers
             _mapper = mapper;
         }
 
+        [Authorize(Roles = "admin")]
         public IActionResult Index()
         {
             var seasons = _seasons.GetSeasons();
@@ -32,6 +34,7 @@ namespace FootballClubApp.Web.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "admin")]
         public IActionResult GetCountryLeagues(int seasonId)
         {
             var model = _mapper.Map<List<CountryLeague>,List<CountryLeagueBaseModel>>(_leagueServices.GetLeagueRecords<CountryLeague>(seasonId));
@@ -44,6 +47,7 @@ namespace FootballClubApp.Web.Controllers
             return View(model);
         }
 
+        [Authorize(Roles="admin")]
         public IActionResult GetEuropeLeagues(int seasonId)
         {
             var model = _mapper.Map<List<EuropeLeague>, List<EuropeLeaguesBaseModel>>(_leagueServices.GetLeagueRecords<EuropeLeague>(seasonId));
@@ -56,6 +60,7 @@ namespace FootballClubApp.Web.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "admin")]
         public IActionResult GetEuropeEliminations(int seasonId)
         {
             var model = _mapper.Map<List<EuropeEliminations>, List<EliminationBaseModel>>(_leagueServices.GetEliminations(seasonId));
@@ -68,84 +73,103 @@ namespace FootballClubApp.Web.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public IActionResult AddCountryLeague(int seasonId)
         {
             return View(seasonId);
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public IActionResult AddCountryLeague(int seasonId, CountryLeagueBaseModel obj)
         {
-            if (obj != null)
+            if (ModelState.IsValid)
             {
-                var model = new CountryLeague()
+                if (obj != null)
                 {
-                    ClubName = obj.ClubName,
-                    Draws = obj.Draws,
-                    Loses = obj.Loses,
-                    MatchesAmount = obj.MatchesAmount,
-                    Place = obj.Place,
-                    Points = obj.Points,
-                    Wins = obj.Wins
-                };
-                _leagueServices.AddLeagueRecord<CountryLeague>(seasonId, model);
+                    var model = new CountryLeague()
+                    {
+                        ClubName = obj.ClubName,
+                        Draws = obj.Draws,
+                        Loses = obj.Loses,
+                        MatchesAmount = obj.MatchesAmount,
+                        Place = obj.Place,
+                        Points = obj.Points,
+                        Wins = obj.Wins
+                    };
+                    _leagueServices.AddLeagueRecord<CountryLeague>(seasonId, model);
+                }
+                return RedirectToAction("Index");
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Home");
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public IActionResult AddEuropeLeague(int seasonId)
         {
             return View(seasonId);
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public IActionResult AddEuropeLeague(int seasonId, EuropeLeaguesBaseModel obj)
         {
-            if (obj != null)
+            if (ModelState.IsValid)
             {
-                var model = new EuropeLeague()
+                if (obj != null)
                 {
-                    ClubName = obj.ClubName,
-                    Draws = obj.Draws,
-                    Loses = obj.Loses,
-                    MatchesAmount = obj.MatchesAmount,
-                    Place = obj.Place,
-                    Points = obj.Points,
-                    Wins = obj.Wins
-                };
-                _leagueServices.AddLeagueRecord<EuropeLeague>(seasonId, model);
+                    var model = new EuropeLeague()
+                    {
+                        ClubName = obj.ClubName,
+                        Draws = obj.Draws,
+                        Loses = obj.Loses,
+                        MatchesAmount = obj.MatchesAmount,
+                        Place = obj.Place,
+                        Points = obj.Points,
+                        Wins = obj.Wins
+                    };
+                    _leagueServices.AddLeagueRecord<EuropeLeague>(seasonId, model);
+                }
+                return RedirectToAction("Index");
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Home");
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public IActionResult AddElimination(int seasonId)
         {
             return View(seasonId);
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public IActionResult AddElimination(int seasonId, EliminationBaseModel obj)
         {
-            if (obj != null)
+            if (ModelState.IsValid)
             {
-                var model = new EuropeEliminations()
+                if (obj != null)
                 {
-                    AwayResult = obj.AwayResult,
-                    HomeResult = obj.HomeResult,
-                    NameOfCompetition = obj.NameOfCompetition,
-                    NameOfStage = obj.NameOfStage,
-                    Round = obj.Round,
-                    SeasonId = seasonId,
-                    Team = obj.Team
-            };
-                _leagueServices.AddEliminations(seasonId, model);
+                    var model = new EuropeEliminations()
+                    {
+                        AwayResult = obj.AwayResult,
+                        HomeResult = obj.HomeResult,
+                        NameOfCompetition = obj.NameOfCompetition,
+                        NameOfStage = obj.NameOfStage,
+                        Round = obj.Round,
+                        SeasonId = seasonId,
+                        Team = obj.Team
+                    };
+                    _leagueServices.AddEliminations(seasonId, model);
+                }
+                return RedirectToAction("Index");
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Home");
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public IActionResult EditCountryLeague(int seasonId,int id)
         {
             var model = _leagueServices.GetLeagueRecord<CountryLeague>(seasonId, id); 
@@ -153,6 +177,7 @@ namespace FootballClubApp.Web.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public IActionResult EditCountryLeague(int seasonId, CountryLeagueBaseModel obj, int id)
         {
             if (obj != null)
@@ -172,6 +197,7 @@ namespace FootballClubApp.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "admin")]
         public IActionResult DeleteCountryLeague(int seasonId, int id)
         {
             var model = _leagueServices.GetLeagueRecord<CountryLeague>(seasonId, id);
@@ -181,6 +207,7 @@ namespace FootballClubApp.Web.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public IActionResult EditEuropeLeague(int seasonId, int id)
         {
             var model = _leagueServices.GetLeagueRecord<EuropeLeague>(seasonId, id);
@@ -188,6 +215,7 @@ namespace FootballClubApp.Web.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public IActionResult EditEuropeLeague(int seasonId, EuropeLeaguesBaseModel obj, int id)
         {
             if (obj != null)
@@ -208,6 +236,7 @@ namespace FootballClubApp.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "admin")]
         public IActionResult DeleteEuropeLeague(int seasonId, int id)
         {
             var model = _leagueServices.GetLeagueRecord<EuropeLeague>(seasonId, id);
@@ -217,6 +246,7 @@ namespace FootballClubApp.Web.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public IActionResult EditElimination(int seasonId, int id)
         {
             var model = _leagueServices.GetElimination(seasonId, id);
@@ -224,6 +254,7 @@ namespace FootballClubApp.Web.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public IActionResult EditElimination(int seasonId, EliminationBaseModel obj, int id)
         {
             if (obj != null)
@@ -243,6 +274,7 @@ namespace FootballClubApp.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "admin")]
         public IActionResult DeleteElimination(int seasonId, int id)
         {
             var model = _leagueServices.GetElimination(seasonId, id);

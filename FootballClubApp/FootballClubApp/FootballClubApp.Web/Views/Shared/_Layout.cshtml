@@ -18,13 +18,23 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/SuperHeroStyle.min.css" asp-append-version="true" />
     </environment>
+    <style>
+        .banner_image{
+            width:100%;
+            max-height:400px;
+        }
+
+        .menu-button{
+            width:100%;
+        }
+    </style>
 </head>
 <body>
     @inject SignInManager<User> SignInManager
     @inject UserManager<User> UserManager
-   
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Legia</a>
+        <a class="navbar-brand" href="#"><img src="~/images/LegiaHerb.png" width="160" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,15 +42,15 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="@Url.Action("Index","Home")">Strona główna<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             @*<form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" placeholder="Search" type="text">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>*@
+                    <input class="form-control mr-sm-2" placeholder="Search" type="text">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>*@
             <ul class="nav navbar-nav navbar-right">
-                @if(SignInManager.IsSignedIn(User))
+                @if (SignInManager.IsSignedIn(User))
                 {
                     <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a></li>
                     <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Account" asp-action="LogoutUser" title="LogOut">LogOut!</a></li>
@@ -53,15 +63,22 @@
             </ul>
         </div>
     </nav>
+    <div class="row no-gutters" style="margin-top:10px;">
+        <div class="col-lg-2 col-md-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-12">
+            <img src="~/images/stadion.jpg" class="banner_image" />
+        </div>
+        <div class="col-lg-2 col-md-2"></div>
+    </div>
     <div class="row no-gutters">
         <div class="col-lg-2 col-md-2"></div>
         <div class="col-lg-8 col-md-8 col-sm-12">
-            <div class="col-lg-4 col-md-4 col-sm-6">@Html.ActionLink("Rozgrywki Krajowe", "CountryLeague", "Leagues", (object)null, new { @class = "btn btn-primary btn-lg" })</div>
-            <div class="col-lg-4 col-md-4 col-sm-6">@Html.ActionLink("Rozgrywki Europejskie", "EuropeLeague", "Leagues", (object)null, new { @class = "btn btn-primary btn-lg" })</div>
-            <div class="col-lg-4 col-md-4 col-sm-6">@Html.ActionLink("Puchary Europejskie", "EuropeElimination", "Leagues", (object)null, new { @class = "btn btn-primary btn-lg" })</div>
+            <div class="col-lg-4 col-md-4 col-sm-6">@Html.ActionLink("Rozgrywki Krajowe", "CountryLeague", "Leagues", (object)null, new { @class = "btn btn-primary btn-lg menu-button" })</div>
+            <div class="col-lg-4 col-md-4 col-sm-6">@Html.ActionLink("Rozgrywki Europejskie", "EuropeLeague", "Leagues", (object)null, new { @class = "btn btn-primary btn-lg menu-button" })</div>
+            <div class="col-lg-4 col-md-4 col-sm-6">@Html.ActionLink("Puchary Europejskie", "EuropeElimination", "Leagues", (object)null, new { @class = "btn btn-primary btn-lg menu-button" })</div>
             @if (User.IsInRole("admin"))
             {
-                <div class="col-lg-6 col-md-6 col-sm-6">@Html.ActionLink("Admin Panel", "Index", "Admin", (object)null, new { @class = "btn btn-primary btn-lg" })</div>
+                <div class="col-lg-6 col-md-6 col-sm-6">@Html.ActionLink("Admin Panel", "Index", "Admin", (object)null, new { @class = "btn btn-primary btn-lg menu-button" })</div>
             }
         </div>
         <div class="col-lg-2 col-md-2"></div>
