@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "1705fccf7b085cbc624bdea3077dbf489d323c5f"
+    "signature": "d2b692e111d3c923ddb34d1a0ee9563b8b25d941"
   },
   "compilationOptions": {
     "defines": [
@@ -34,7 +34,8 @@
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.3",
           "Newtonsoft.Json": "11.0.2",
-          "Serilog.Extensions.Logging.File": "1.1.0"
+          "Serilog.Extensions.Logging.File": "1.1.0",
+          "WebSocketManager": "1.0.1"
         },
         "runtime": {
           "FootballClubApp.Web.dll": {}
@@ -4262,6 +4263,32 @@
           "System.Xml.XPath": "4.3.0"
         }
       },
+      "WebSocketManager/1.0.1": {
+        "dependencies": {
+          "Microsoft.AspNetCore.WebSockets": "2.0.2",
+          "Microsoft.NETCore.App": "2.0.0",
+          "Newtonsoft.Json": "11.0.2",
+          "WebSocketManager.Common": "1.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/WebSocketManager.dll": {}
+        },
+        "compile": {
+          "lib/netcoreapp1.0/WebSocketManager.dll": {}
+        }
+      },
+      "WebSocketManager.Common/1.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.App": "2.0.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/WebSocketManager.Common.dll": {}
+        },
+        "compile": {
+          "lib/netcoreapp1.0/WebSocketManager.Common.dll": {}
+        }
+      },
       "WindowsAzure.Storage/8.1.4": {
         "dependencies": {
           "Microsoft.Data.OData": "5.8.2",
@@ -6743,6 +6770,20 @@
       "sha512": "sha512-jw9oHHEIVW53mHY9PgrQa98Xo2IZ0ZjrpdOTmtvk+Rvg4tq7dydmxdNqUvJ5YwjDqhn75mBXWttWjiKhWP53LQ==",
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
+    },
+    "WebSocketManager/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qKZ6lNGdyCPFquz+APyBEuEoGg0tt8mXUceG2Tf57lv2EDlgHD6IfxLd2VfMuZxN3jSBFE//2MkrKe+9on4UOg==",
+      "path": "websocketmanager/1.0.1",
+      "hashPath": "websocketmanager.1.0.1.nupkg.sha512"
+    },
+    "WebSocketManager.Common/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FLWB/cF14sz337Bct1AFPgEqskXcSWmA67u9JM7Phl0whv9K9OHpPyKnbYfzCyMrvLByjn2nS2SifbGkTV8F9w==",
+      "path": "websocketmanager.common/1.0.0",
+      "hashPath": "websocketmanager.common.1.0.0.nupkg.sha512"
     },
     "WindowsAzure.Storage/8.1.4": {
       "type": "package",

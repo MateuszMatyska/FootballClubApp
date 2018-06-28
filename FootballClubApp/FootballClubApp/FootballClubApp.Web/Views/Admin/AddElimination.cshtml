@@ -2,7 +2,11 @@
 @{
     ViewData["Title"] = "AddElimination";
 }
-
+<style>
+    .black-font {
+        color: black;
+    }
+</style>
 <h2>Dodaj rekord</h2>
 <div class="row no-gutters">
     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -11,27 +15,27 @@
             @Html.Hidden("seasonId", Model)
             <div class="form-group">
                 @Html.Label("Klub", "Klub", htmlAttributes: new { @class = "control-label col-md-4" })
-                @Html.TextBox("obj.Team")
+                @Html.TextBox("obj.Team", "", new { @class = "black-font" })
             </div>
             <div class="form-group">
                 @Html.Label("Wynik gospodarzy", "Wynik gospodarzy", htmlAttributes: new { @class = "control-label col-md-4" })
-                @Html.TextBox("obj.HomeResult")
+                @Html.TextBox("obj.HomeResult", "", new { @class = "black-font" })
             </div>
             <div class="form-group">
                 @Html.Label("Wynik gosci", "Wynik gosci", htmlAttributes: new { @class = "control-label col-md-4" })
-                @Html.TextBox("obj.AwayResult")
+                @Html.TextBox("obj.AwayResult", "", new { @class = "black-font" })
             </div>
             <div class="form-group">
                 @Html.Label("Runda", "Runda", htmlAttributes: new { @class = "control-label col-md-4" })
-                @Html.TextBox("obj.Round")
+                @Html.TextBox("obj.Round", "", new { @class = "black-font" })
             </div>
             <div class="form-group">
                 @Html.Label("Nazwa Etapu", "Nazwa Etapu", htmlAttributes: new { @class = "control-label col-md-4" })
-                @Html.TextBox("obj.NameOfStage")
+                @Html.TextBox("obj.NameOfStage", "", new { @class = "black-font" })
             </div>
             <div class="form-group">
                 @Html.Label("Nazwa Turnieju", "Nazwa Turnieju", htmlAttributes: new { @class = "control-label col-md-4" })
-                @Html.TextBox("obj.NameOfCompetition")
+                @Html.TextBox("obj.NameOfCompetition", "", new { @class = "black-font" })
             </div>
 
             <input type="submit" value="Dodaj" class="btn btn-primary btn-lg" />

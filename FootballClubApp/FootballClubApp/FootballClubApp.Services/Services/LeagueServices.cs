@@ -164,9 +164,11 @@ namespace FootballClubApp.Services.Services
                 oldItem.SeasonId = elimination.SeasonId;
                 oldItem.Team = elimination.Team;
 
+                _ctx.SaveChanges();
+
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -185,6 +187,17 @@ namespace FootballClubApp.Services.Services
             catch (Exception)
             {
                 return false;
+            }
+        }
+        public EuropeEliminations GetElimination(int seasonId, int id)
+        {
+            try
+            {
+                return _ctx.EuropeEliminations.Single(x => x.SeasonId == seasonId && x.Id == id);
+            }
+            catch(Exception)
+            {
+                return new EuropeEliminations();
             }
         }
     }

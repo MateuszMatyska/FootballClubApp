@@ -256,6 +256,15 @@ namespace FootballClubApp.Web.Controllers
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> LogoutUser()
+        {
+            await _signInManager.SignOutAsync();
+            Logger.LogInformation("User logged out.");
+            return RedirectToAction("Index", "Home");
+        }
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -441,6 +450,30 @@ namespace FootballClubApp.Web.Controllers
         public IActionResult AccessDenied()
         {
             return View();
+        }
+
+        [AllowAnonymous]
+        public async Task<IActionResult> AddRole(string role)
+        {
+            if(!await _roleManager.RoleExistsAsync(role))
+            {
+                await _roleManager.CreateAsync(new Role(role));
+            }
+
+            return Json(_roleManager.Roles);
+        }
+
+        [AllowAnonymous]
+        public async Task<IActionResult> AddUserToRole()
+        {
+            User user = await _userManager.FindByEmailAsync("AdminMat@Mat.pl");
+
+            if(!User.IsInRole("admin"))
+            {
+                await _userManager.AddToRoleAsync(user, "admin");
+            }
+
+            return Json("ok!");
         }
 
         #region Helpers

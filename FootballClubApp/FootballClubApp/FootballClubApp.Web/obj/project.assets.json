@@ -5245,6 +5245,34 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "WebSocketManager/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.WebSockets": "1.0.0",
+          "Microsoft.NETCore.App": "1.1.0",
+          "Newtonsoft.Json": "9.0.1",
+          "WebSocketManager.Common": "1.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp1.0/WebSocketManager.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/WebSocketManager.dll": {}
+        }
+      },
+      "WebSocketManager.Common/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.1.0",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netcoreapp1.0/WebSocketManager.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/WebSocketManager.Common.dll": {}
+        }
+      },
       "WindowsAzure.Storage/8.1.4": {
         "type": "package",
         "dependencies": {
@@ -13648,6 +13676,26 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "WebSocketManager/1.0.1": {
+      "sha512": "qKZ6lNGdyCPFquz+APyBEuEoGg0tt8mXUceG2Tf57lv2EDlgHD6IfxLd2VfMuZxN3jSBFE//2MkrKe+9on4UOg==",
+      "type": "package",
+      "path": "websocketmanager/1.0.1",
+      "files": [
+        "lib/netcoreapp1.0/WebSocketManager.dll",
+        "websocketmanager.1.0.1.nupkg.sha512",
+        "websocketmanager.nuspec"
+      ]
+    },
+    "WebSocketManager.Common/1.0.0": {
+      "sha512": "FLWB/cF14sz337Bct1AFPgEqskXcSWmA67u9JM7Phl0whv9K9OHpPyKnbYfzCyMrvLByjn2nS2SifbGkTV8F9w==",
+      "type": "package",
+      "path": "websocketmanager.common/1.0.0",
+      "files": [
+        "lib/netcoreapp1.0/WebSocketManager.Common.dll",
+        "websocketmanager.common.1.0.0.nupkg.sha512",
+        "websocketmanager.common.nuspec"
+      ]
+    },
     "WindowsAzure.Storage/8.1.4": {
       "sha512": "W6ZZ0/o7+3Qb77mRAQyLjPudHG3OMeeQ4p9yY13PUdJArmRCx2cLMm5F4tpIjJXxzHC0ew0oK7DMDGILMdfCnw==",
       "type": "package",
@@ -13709,7 +13757,8 @@
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.3",
       "Newtonsoft.Json >= 11.0.2",
-      "Serilog.Extensions.Logging.File >= 1.1.0"
+      "Serilog.Extensions.Logging.File >= 1.1.0",
+      "WebSocketManager >= 1.0.1"
     ]
   },
   "packageFolders": {
@@ -13800,6 +13849,10 @@
           "Serilog.Extensions.Logging.File": {
             "target": "Package",
             "version": "[1.1.0, )"
+          },
+          "WebSocketManager": {
+            "target": "Package",
+            "version": "[1.0.1, )"
           }
         },
         "imports": [

@@ -26,7 +26,7 @@ namespace FootballClubApp.Web.Controllers
         {
             var seasons = _seasons.GetSeasons();
             var model = _mapper.Map<List<Seasons>, List<SeasonsViewModel>>(seasons);
-
+            
             return View(model);
         }
 

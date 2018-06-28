@@ -17,6 +17,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using WebSocketManager;
 
 namespace FootballClubApp.Web
 {
@@ -52,6 +53,9 @@ namespace FootballClubApp.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddWebSocketManager();
+            services.AddSingleton<ChatManager>();
+
             #region Framework Services
             // Add framework services.
             services.AddOptions();
@@ -140,13 +144,14 @@ namespace FootballClubApp.Web
             services.AddScoped<ISeasonsService, SeasonsService>();
             services.AddScoped<IBasicInformationService, BasicInformationService>();
             services.AddScoped<ILeaguesService, LeagueServices>();
+            
 
             #endregion
             Services = services;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
@@ -170,6 +175,9 @@ namespace FootballClubApp.Web
             var userManager = Services.BuildServiceProvider().GetRequiredService<UserManager<User>>();
             var roleManager = Services.BuildServiceProvider().GetRequiredService<RoleManager<Role>>();
             Seed.RunSeed(dbContext, roleManager, userManager);
+
+            app.UseWebSockets();
+            app.MapWebSocketManager("/chat", serviceProvider.GetService<ChatHandler>());
 
             app.UseAuthentication();
             app.UseStaticFiles();

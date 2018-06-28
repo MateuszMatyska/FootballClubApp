@@ -20,15 +20,17 @@
             </tr>
             @foreach (var itm in Model)
             {
-                <tr>
-                    <td>@itm.Place</td>
-                    <td>@itm.ClubName</td>
-                    <td>@itm.MatchesAmount</td>
-                    <td>@itm.Wins</td>
-                    <td>@itm.Draws</td>
-                    <td>@itm.Loses</td>
-                    <td>@itm.Points</td>
-                </tr>
+            <tr>
+                <td>@itm.Place</td>
+                <td>@itm.ClubName</td>
+                <td>@itm.MatchesAmount</td>
+                <td>@itm.Wins</td>
+                <td>@itm.Draws</td>
+                <td>@itm.Loses</td>
+                <td>@itm.Points</td>
+                <td>@Html.ActionLink("Edytuj", "EditEuropeLeague", "Admin", new { seasonId = itm.SeasonId, id = itm.Id }, new { @class = "btn btn-warning btn-lg" })</td>
+                <td>@Html.ActionLink("Edytuj", "DeleteEuropeLeague", "Admin", new { seasonId = itm.SeasonId, id = itm.Id }, new { @class = "btn btn-danger btn-lg" })</td>
+            </tr>
             }
         </table>
         <div class="col-lg-4 col-md-4 col-sm-12">

@@ -15,9 +15,9 @@ C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\Football
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Web\bin\Debug\netcoreapp2.0\FootballClubApp.DAL.pdb
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Web\obj\Debug\netcoreapp2.0\FootballClubApp.Web.csprojAssemblyReference.cache
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Web\obj\Debug\netcoreapp2.0\FootballClubApp.Web.csproj.CoreCompileInputs.cache
-C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Web\obj\Debug\netcoreapp2.0\FootballClubApp.Web.AssemblyInfoInputs.cache
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Web\obj\Debug\netcoreapp2.0\FootballClubApp.Web.AssemblyInfo.cs
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Web\obj\Debug\netcoreapp2.0\FootballClubApp.Web.csproj.CopyComplete
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Web\obj\Debug\netcoreapp2.0\FootballClubApp.Web.dll
 C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Web\obj\Debug\netcoreapp2.0\FootballClubApp.Web.pdb
+C:\Users\MateuszM\Documents\Visual Studio 2017\Projects\FootballClubApp\FootballClubApp\FootballClubApp\FootballClubApp.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

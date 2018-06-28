@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Setup Solution";
 }
+@inject ChatManager ChatManager
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12">
         <img src="~/images/Legiaherb2.png" />
@@ -15,10 +16,10 @@
             </tr>
             @foreach (var itm in Model.BasicInformations)
             {
-            <tr>
-                <td>@itm.Data</td>
-                <td>@itm.Information</td>
-            </tr>
+                <tr>
+                    <td>@itm.Data</td>
+                    <td>@itm.Information</td>
+                </tr>
             }
         </table>
     </div>
@@ -39,4 +40,18 @@
             }
         </table>
     </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <ul id="messages">
+            @foreach (var item in ChatManager.Messages)
+            {
+                <li>@item.UserId said: @item.Message</li>
+            }
+        </ul>
+        <input class="form-control" id="message-content" />
+    </div>
 </div>
+
+@section Scripts{
+    <script data-main="scripts/main" src="https://rawgit.com/radu-matei/websocket-manager/master/src/WebSocketManager.Client.TS/dist/WebSocketManager.js"></script>
+}

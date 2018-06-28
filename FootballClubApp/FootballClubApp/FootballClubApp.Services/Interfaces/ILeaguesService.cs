@@ -17,5 +17,6 @@ namespace FootballClubApp.Services.Interfaces
         bool AddEliminations(int seasonId, EuropeEliminations elimination);
         bool EditEliminations(int seasonId, int eliminationId, EuropeEliminations elimination);
         bool DeleteEliminations(int seasonId, int eliminationId);
+        EuropeEliminations GetElimination(int seasonId, int id);
     }
 }
